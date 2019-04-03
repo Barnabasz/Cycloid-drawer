@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="StyleSheet" href="style.css" type="text/css">
+<script type = "application/javascript" src = "Epicykloidy.js"></script>
+<title>Epicykloidy 1</title>
+</head>
+<body>
+    <header>
+        <h1>Epicykloidy</h1>
+        <nav>
+        <ul>
+            <li onclick="display('definicja')">Definicja</li>
+            <li onclick="display('wzory')">Wzory</li>
+            <li onclick="display('przykład')">Przykład</li>
+            <li onclick="display('animacja')">Animacja</li>
+        </ul>
+    </nav>
+    </header>
+    
+    <main>
+        <article id="definicja" name = "CONTENT">
+            <content>
+                <p>Epicykloida – krzywa, jaką zakreśla ustalony punkt okręgu toczącego się bez poślizgu na zewnątrz innego, nieruchomego okręgu. Epicykloida jest szczególnym przypadkiem epitrochoidy.
+                Kształt epicykloidy zależy od stosunku promieni okręgów, nieruchomego do toczącego się. Gdy promienie są równe otrzymuje się krzywą sercową, z grecka zwaną kardioidą</p>
+                <img src="kardio.png" />
+                <p>W mojej animacji dodałem jeszcze offset który pozwala na zmianę długości proienia który rysuje krzywą bez zmieniania promienia koła toczącego się</p>
+                
+            </content>
+        </article>
+        <article id="wzory" name = "CONTENT" class = "nodisplay">
+            <img src="x.svg" />
+            <img src="y.svg" />
+        </article>
+        <article id="przykład" name = "CONTENT" class = "nodisplay">
+             <img src="Cardioid_animation.gif" />
+        </article>
+        <article id="animacja" name = "CONTENT" class = "nodisplay">
+            <p> Wartość pierwszego promienia może być tylko liczbą dodatnią.<br/>
+            Wartość drugiego promienia może być liczbą dadatnią lub liczbą ujemną której wartość absolutna jest mniejszą od pierwszego promienia.<br/>
+            Wrtość ofsetu może być liczbą dodatnią lub liczbą ujemną której wartość absolutna jest mniejsza o wartości absolutne drugiego promienia.</p>
+            <fieldset id = "formularz" >
+                <legend>Dane</legend>
+                <form name = "form">
+                    <table>
+                       <tbody>
+                        <tr>
+                             <td>Podaj promień dużego koła</td>
+                        </tr>
+                        <tr>
+                            <td><input type = "text" size = "15" name = "R" onblur = "RValidate()"></td>
+                            <td><div id = "RError" class = "error"></div></td>
+                        </tr>
+                        <tr>
+                            <td>Podaj promień małego koła</td>
+                        </tr>
+                        <tr>
+                            <td><input type = "text" size = "15" name = "r" onblur = "rValidate()"></td>
+                            <td><div id = "rError" class = "error"></div></td>
+                        </tr>
+                        <tr>
+                            <td>Podaj offset</td>
+                        </tr>
+                        <tr>
+                            <td><input type = "text" size = "15" name = "off" onblur = "offValidate()" value="0"></td>
+                            <td><div id = "offError" class = "error"></div></td>
+                        </tr>
+                        <tr>
+                            <td><input type = "button" value = "Start" onclick="draw()"/></td>
+                            <td><input type = "button" value = "Stop" onclick="pause()"/></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </fieldset>
+            <content>
+                <div id = "canvasholder" class ="canvdiv">
+                    <canvas id = "Canvas1" class  = "canv" width = "620" height="620"></canvas>
+                    <canvas id = "Canvas2" class  = "canv" width = "620" height="620"></canvas>
+                </div>
+            </content>
+        </article>
+    </main>
+    <footer>
+        <p>Kamil Halat</p>
+    </footer>
+</body>
+</html>
